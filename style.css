@@ -1,0 +1,52 @@
+/* Styles for sticky content demo
+ * Author: Andrew Henderson (@AndrewHenderson)
+ */
+
+#wrapper { 
+	width:960px;
+	margin:0 auto;
+}
+#header {
+	border-bottom:1px solid #ccc;
+	padding:10px 0;
+}
+#main {
+	overflow:hidden;
+}
+.sidebar {
+	float:left;
+	width:230px;
+	padding:0;
+}
+	.sidebar .widget {
+		width:200px;
+		padding:10px 15px;
+		border-bottom:1px solid #ccc;
+	}
+#article {
+	width:458px;
+	padding:0 20px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	float:left;
+}
+#footer {
+	color:#ccc;
+	border-top:1px solid #ccc;
+	padding:10px;
+}
+	#footer a {
+		color:#fff;
+		text-decoration:none;
+	}
+		#footer a:hover {
+			text-decoration:underline;
+		}
+#footer.tall {
+	height:700px;
+	background:#777;
+}
+h1 { margin:0; }
+h2 { margin:0 0 0.5em; }
+.sticky {background:red;color:#fff;}
+.sticky-placeholder {background:blue;}
