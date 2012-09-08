@@ -18,9 +18,9 @@
 			},
 			settings = $.extend({}, defaults, options); // Accepts custom stopper id or class
 
+		// Checks if custom z-index was defined
 		function checkIndex() {
 
-			// Checks if custom z-index was defined
 			if( typeof settings.zIndex == 'number' ) {
 
 				return true;
@@ -34,9 +34,9 @@
 		}
 		var hasIndex = checkIndex(); // True or false
 
+		// Checks if a stopper exists in the DOM or number defined
 		function checkStopper() {
 
-			// Checks if a stopper exists in the DOM or number defined
 			if ( 0 < $(settings.stopper).length || typeof settings.stopper === 'number' ) {
 
 				return true;
@@ -63,12 +63,12 @@
 
 			function stickyScroll () {
 
-				var windowTop  = $(window).scrollTop(); // Check window's scroll position
+				var windowTop  = $window.scrollTop(); // Check window's scroll position
 				
 				if ( hasStopper && typeof stopper === 'string' ) {
 
 					var stopperTop = $(stopper).offset().top,
-						stopPoint  = (stopperTop - thisHeight) - topSpacing;
+						stopPoint  = ( stopperTop - thisHeight ) - topSpacing;
 				
 				} else if ( hasStopper && typeof stopper === 'number' ) {
 
@@ -76,7 +76,7 @@
 
 				}
 
-				if ( pushPoint < windowTop ){
+				if ( pushPoint < windowTop ) {
 
 					// Create a placeholder for sticky element to occupy vertical real estate
 					$this.after(placeholder)
@@ -95,7 +95,7 @@
 						
 						if ( stopPoint < windowTop ) {
 
-							var diff = (stopPoint - windowTop) + topSpacing;
+							var diff = ( stopPoint - windowTop ) + topSpacing;
 
 							$this.css({ top: diff });
 
