@@ -10,8 +10,6 @@
 	border-bottom:1px solid #ccc;
 	padding:10px 20px;
 	width:920px;
-	background:red;
-	color:#fff;
 }
 #main {
 	overflow:hidden;
@@ -34,8 +32,6 @@
 	float:left;
 }
 #footer {
-	color:#ccc;
-	border-top:1px solid #ccc;
 	padding:10px;
 }
 	#footer a {
@@ -47,9 +43,6 @@
 		}
 #footer.tall {
 	height:700px;
-	background:#777;
 }
 h1 { margin:0; }
 h2 { margin:0 0 0.5em; }
-.sticky {background:red;color:#fff;}
-.sticky-placeholder {background:blue;}

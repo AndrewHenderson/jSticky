@@ -4,14 +4,17 @@
 	<title>Demo: jQuery Sticky Content</title>
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<style type="text/css">
-		#header, .sticky {
+		#sticky-1 {
 			background: blue;
 			color: #fff;
 		}
-		#footer {
+		#sticky-2 {
+			background: green;
+			color: #fff;
+		}
+		#sticky-3 {
 			background: red;
 			color: #fff;
-			text-align: center;
 		}
 	</style>
 </head>
@@ -26,8 +29,8 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
-				<div class="widget sticky">
-					<h2>Sticky Widget</h2>
+				<div class="widget static">
+					<h2>Static Widget</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
 				<div class="widget static">
@@ -56,17 +59,17 @@
 				<p>Donec arcu lectus, ullamcorper ut blandit sit amet, consequat eu quam. Fusce augue augue, blandit non ornare nec, auctor in purus. Quisque nec turpis arcu. Phasellus hendrerit massa quis erat pulvinar dapibus. Maecenas at elit et nulla tempor varius. Aenean consectetur elit ac ligula dignissim aliquam. Praesent adipiscing metus bibendum libero malesuada porta. Suspendisse potenti. Cras molestie mauris id orci lobortis congue. Phasellus accumsan placerat euismod. Vivamus non viverra dolor. Ut tempus gravida elit, sed vehicula velit porttitor sit amet.</p>
 			</div>
 			<div id="sidebar-rt" class="sidebar">
-				<div class="widget static">
-					<h2>Static Widget</h2>
+				<div id="sticky-1" class="widget sticky">
+					<h2>Sticky Widget #1</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
-				<div class="widget sticky">
-					<h2>Sticky Widget</h2>
+				<div id="sticky-2" class="widget sticky">
+					<h2>Sticky Widget #2</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
-				<div class="widget static">
-					<h2>Static Widget</h2>
+				<div id="sticky-3" class="widget sticky">
+					<h2>Sticky Widget #3</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
 			</div>
@@ -80,15 +83,18 @@
 	<script type="text/javascript">
 		$(function(){
 
-			$("#header").sticky({
-				zIndex:3,
-				stopper: 300
+			$("#sticky-1").sticky({
+				zIndex:3
 			});
 
-			$(".sticky").sticky({
-				topSpacing: 58,
-				zIndex:2,
-				stopper: "#footer"
+			$("#sticky-2").sticky({
+				topSpacing: 60,
+				zIndex:2
+			});
+
+			$("#sticky-3").sticky({
+				topSpacing: 120,
+				zIndex:1
 			});
 
 		});
