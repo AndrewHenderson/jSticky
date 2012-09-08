@@ -4,18 +4,24 @@
 	<title>Demo: jQuery Sticky Content</title>
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<style type="text/css">
-		#sticky-1 {
+		#sticky-1, #sticky-4 {
 			background: blue;
 			color: #fff;
 		}
-		#sticky-2 {
+		#sticky-2, #sticky-5 {
 			background: green;
 			color: #fff;
 		}
-		#sticky-3 {
+		#sticky-3, #sticky-6 {
 			background: red;
 			color: #fff;
 		}
+		#footer {
+			border-top:1px solid #ccc;
+		}
+			#footer a {
+				color:#08c;
+			}
 	</style>
 </head>
 <body>
@@ -23,20 +29,17 @@
 		<div id="header"><h1>Demo: jQuery Sticky Content</h1></div>
 		<div id="main">
 			<div id="sidebar-lt" class="sidebar">
-				<div class="widget static">
-					<h2>Static Widget</h2>
+				<div id="sticky-1" class="widget sticky">
+					<h2>Sticky Widget #1</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
+				</div>
+				<div id="sticky-2" class="widget sticky">
+					<h2>Sticky Widget #2</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
-				<div class="widget static">
-					<h2>Static Widget</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
-				</div>
-				<div class="widget static">
-					<h2>Static Widget</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
+				<div id="sticky-3" class="widget sticky">
+					<h2>Sticky Widget #3</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
 			</div>
@@ -59,43 +62,56 @@
 				<p>Donec arcu lectus, ullamcorper ut blandit sit amet, consequat eu quam. Fusce augue augue, blandit non ornare nec, auctor in purus. Quisque nec turpis arcu. Phasellus hendrerit massa quis erat pulvinar dapibus. Maecenas at elit et nulla tempor varius. Aenean consectetur elit ac ligula dignissim aliquam. Praesent adipiscing metus bibendum libero malesuada porta. Suspendisse potenti. Cras molestie mauris id orci lobortis congue. Phasellus accumsan placerat euismod. Vivamus non viverra dolor. Ut tempus gravida elit, sed vehicula velit porttitor sit amet.</p>
 			</div>
 			<div id="sidebar-rt" class="sidebar">
-				<div id="sticky-1" class="widget sticky">
-					<h2>Sticky Widget #1</h2>
+				<div id="sticky-4" class="widget sticky">
+					<h2>Sticky Widget #4</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
-				<div id="sticky-2" class="widget sticky">
-					<h2>Sticky Widget #2</h2>
+				<div id="sticky-5" class="widget sticky">
+					<h2>Sticky Widget #5</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
-				<div id="sticky-3" class="widget sticky">
-					<h2>Sticky Widget #3</h2>
+				<div id="sticky-6" class="widget sticky">
+					<h2>Sticky Widget #6</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum luctus eros sed pretium. Proin turpis odio, viverra et tincidunt nec, tincidunt sed nisl.</p>
 				</div>
 			</div>
 		</div>
 		<div id="footer" class="tall">
-			<h2>Stop Point</h2>
 			&copy; 2012 <a href="http://andrewhenderson.me">Andrew Henderson</a></div>
 	</div>
 	<script type="text/javascript" src="jquery-1.8.1.min.js"></script>
-	<script type="text/javascript" src="jquery.jsticky.min.js"></script>
+	<script type="text/javascript" src="jquery.jsticky.js"></script>
 	<script type="text/javascript">
 		$(function(){
 
 			$("#sticky-1").sticky({
-				zIndex:3
+				topSpacing: 10,
+				zIndex: 3
 			});
 
 			$("#sticky-2").sticky({
-				topSpacing: 60,
-				zIndex:2
+				topSpacing: 90,
+				zIndex: 2
 			});
 
 			$("#sticky-3").sticky({
-				topSpacing: 120,
-				zIndex:1
+				topSpacing: 340,
+				zIndex: 1
 			});
+
+			$("#sticky-4").sticky({
+				topSpacing: 10,
+				zIndex: 1
+			});
+			$("#sticky-5").sticky({
+				topSpacing: 90,
+				zIndex: 2
+			})
+			$("#sticky-6").sticky({
+				topSpacing: 340,
+				zIndex: 3
+			})
 
 		});
 	</script>

@@ -79,9 +79,8 @@
 				if ( pushPoint < windowTop ) {
 
 					// Create a placeholder for sticky element to occupy vertical real estate
-					var myPlaceholder = $this.after(placeholder)
-						 
-					$this.css({
+					$this.after(placeholder)
+						 .css({
 							position: 'fixed',
 							top: topSpacing
 					});
@@ -111,8 +110,7 @@
 						top: ''
 					});
 
-
-					myPlaceholder.remove();
+					placeholder.remove();
 
 				}
 
