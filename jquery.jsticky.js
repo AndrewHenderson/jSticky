@@ -2,26 +2,27 @@
  * =============
  * Author: Andrew Henderson (@AndrewHenderson)
  * Date: 9/7/2012
+ * Update: 11/4/2012
  * Website: http://github.com/andrewhenderson/jsticky/
- * Description: A jQuery plugin that allows any DOM element to remain in
- * view while scrolling the page.
+ * Description: A jQuery plugin that keeps select DOM element(s)
+ * in view while scrolling the page.
  */
 
-(function ( $ ) {
+;(function ( $ ) {
 
 	$.fn.sticky = function ( options ) {
 
 		var defaults = {
 				topSpacing: 0, // No spacing by default
 				zIndex: '', // No default z-index
-				stopper: '.stopper' // Default stopper class, also accepts number value
+				stopper: '.sticky-stopper' // Default stopper class, also accepts number value
 			},
 			settings = $.extend({}, defaults, options); // Accepts custom stopper id or class
 
 		// Checks if custom z-index was defined
 		function checkIndex() {
 
-			if( typeof settings.zIndex == 'number' ) {
+			if ( typeof settings.zIndex == 'number' ) {
 
 				return true;
 
@@ -119,4 +120,4 @@
 			$window.bind("scroll", stickyScroll);
 		});
 	};
-})(jQuery);
+})( jQuery );
