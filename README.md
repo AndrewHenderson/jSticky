@@ -11,13 +11,13 @@ $('#foo').sticky();
 Top spacing, z-index, and stopper.
 ```
 $('#foo').sticky({
-	topSpacing: 80,
-	zIndex:100,
-	stopper: "#bar"
+	topSpacing: 80, // Space between element and top of the viewport
+	zIndex: 100, // z-index
+	stopper: "#bar" // Id, class, or number value
 });
 ```
-Note: If no stopper id or class is provided, the default is 'sticky-stopper'.
+Note: If no stopper id or class is provided, the default is 'sticky-stopper'. You can also use number values for pixel points on the y-axis.
 
-Tip: Use the zIndex option if you need to stack various sticky elements when scrolling the page.
+Tip: Use the zIndex option if you need to stack various sticky elements while scrolling the page.
 
 
