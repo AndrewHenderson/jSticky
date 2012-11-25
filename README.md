@@ -1,7 +1,7 @@
 jSticky
 =======
 
-jQuery plugin to keep select DOM element(s) in view while scrolling the page.
+jQuery plugin to keep select DOM element(s) in view while scrolling the page. Features stop points and z-indexing. Works when being applied to a class of multiple elements simultanesouly.
 
 ##Using jSticky
 ```
