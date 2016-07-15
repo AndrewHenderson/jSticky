@@ -15,7 +15,8 @@
     var defaults = {
         topSpacing: 0, // No spacing by default
         zIndex: '', // No default z-index
-        stopper: '.sticky-stopper' // Default stopper class, also accepts number value
+        stopper: '.sticky-stopper', // Default stopper class, also accepts number value
+        stickyClass: 'is-sticky' // Class applied to element when it's stuck
       },
       settings = $.extend({}, defaults, options); // Accepts custom stopper id or class
 
@@ -53,46 +54,52 @@
           stopper        = settings.stopper,
           $window        = $(window);
 
-      function stickyScroll() {
+      if($window.innerHeight() > thisHeight) {
 
-        var windowTop  = $window.scrollTop(); // Check window's scroll position
-        
-        if ( hasStopper && typeof stopper === 'string' ) {
-          var stopperTop = $(stopper).offset().top,
-              stopPoint  = (stopperTop - thisHeight) - topSpacing;
-        } else if (hasStopper && typeof stopper === 'number') {
-          var stopPoint = stopper;
-        }
+        function stickyScroll() {
 
-        if (pushPoint < windowTop) {
-          // Create a placeholder for sticky element to occupy vertical real estate
-          $this.after(placeholder).css({
-            position: 'fixed',
-            top: topSpacing
-          });
-          
-          if (hasIndex) {
-            $this.css({ zIndex: zIndex });
+          var windowTop  = $window.scrollTop(); // Check window's scroll position
+
+          if ( hasStopper && typeof stopper === 'string' ) {
+            var stopperTop = $(stopper).offset().top,
+                stopPoint  = (stopperTop - thisHeight) - topSpacing;
+          } else if (hasStopper && typeof stopper === 'number') {
+            var stopPoint = stopper;
           }
 
-          if (hasStopper) {
-            if (stopPoint < windowTop) {
-              var diff = (stopPoint - windowTop) + topSpacing;
-              $this.css({ top: diff });
+          if (pushPoint < windowTop) {
+            // Create a placeholder for sticky element to occupy vertical real estate
+            $this.addClass(settings.stickyClass).after(placeholder).css({
+              position: 'fixed',
+              top: topSpacing,
+              width: thisWidth
+            });
+
+            if (hasIndex) {
+              $this.css({ zIndex: zIndex });
             }
+
+            if (hasStopper) {
+              if (stopPoint < windowTop) {
+                var diff = (stopPoint - windowTop) + topSpacing;
+                $this.css({ top: diff });
+              }
+            }
+          } else {
+            $this.removeClass(settings.stickyClass).css({
+              position: 'static',
+              top: null,
+              left: null,
+              width: 'auto'
+            });
+
+            placeholder.remove();
           }
-        } else {
-          $this.css({
-            position: 'static',
-            top: null,
-            left: null
-          });
+        };
 
-          placeholder.remove();
-        }
-      };
-
-      $window.bind("scroll", stickyScroll);
+        $window.bind('scroll', stickyScroll);
+        $window.bind('load', stickyScroll);
+      }
     });
   };
 })(jQuery);

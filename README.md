@@ -14,6 +14,7 @@ $('#foo').sticky({
 	topSpacing: 80, // Space between element and top of the viewport
 	zIndex: 100, // z-index
 	stopper: "#bar" // Id, class, or number value
+	stickyClass: 'is-sticky' // Class applied to element when it's stuck
 });
 ```
 Note: If no stopper id or class is provided, the default is 'sticky-stopper'. You can also use number values for pixel points on the y-axis.
