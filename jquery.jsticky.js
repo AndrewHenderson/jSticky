@@ -56,6 +56,9 @@
 
         var windowTop  = $window.scrollTop(); // Check window's scroll position
         var stopPoint = stopper;
+        var parentWidth = $this.parent().width();
+
+        placeholder.width(parentWidth)
 
         if ( hasStopper && typeof stopper === 'string' ) {
           var stopperTop = $(stopper).offset().top;
@@ -67,7 +70,7 @@
           $this.addClass(settings.stickyClass).after(placeholder).css({
             position: 'fixed',
             top: topSpacing,
-            width: thisWidth
+            width: parentWidth
           });
 
           if (hasIndex) {
@@ -97,7 +100,7 @@
       }
 
       if($window.innerHeight() > thisHeight) {
-        
+
         $window.bind('scroll', stickyScroll);
         $window.bind('load', stickyScroll);
       }
