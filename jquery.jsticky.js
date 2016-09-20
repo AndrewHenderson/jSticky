@@ -16,7 +16,7 @@
       topSpacing: 0, // No spacing by default
       zIndex: '', // No default z-index
       stopper: '.sticky-stopper', // Default stopper class, also accepts number value
-      stickyClass: 'is-sticky' // Class applied to element when it's stuck
+      stickyClass: false // Class applied to element when it's stuck
     };
     var settings = $.extend({}, defaults, options); // Accepts custom stopper id or class
 
@@ -68,7 +68,10 @@
 
         if (pushPoint < windowTop) {
           // Create a placeholder for sticky element to occupy vertical real estate
-          $this.addClass(settings.stickyClass).after(placeholder).css({
+          if(settings.stickyClass)
+            $this.addClass(settings.stickyClass);
+
+          $this.after(placeholder).css({
             position: 'fixed',
             top: topSpacing,
             width: parentWidth
@@ -89,7 +92,10 @@
             }
           }
         } else {
-          $this.removeClass(settings.stickyClass).css({
+          if(settings.stickyClass)
+            $this.removeClass(settings.stickyClass);
+
+          $this.css({
             position: 'static',
             top: null,
             left: null,
