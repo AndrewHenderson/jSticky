@@ -1,8 +1,9 @@
 /* jSticky Plugin
  * =============
  * Author: Andrew Henderson (@AndrewHenderson)
+ * Author: Mike Street (@mikestreety)
  * Date: 9/7/2012
- * Update: 02/14/2013
+ * Update: 09/20/2016
  * Website: http://github.com/andrewhenderson/jsticky/
  * Description: A jQuery plugin that keeps select DOM
  * element(s) in view while scrolling the page.
