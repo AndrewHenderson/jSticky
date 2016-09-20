@@ -103,6 +103,7 @@
 
         $window.bind('scroll', stickyScroll);
         $window.bind('load', stickyScroll);
+        $window.bind('resize', stickyScroll);
       }
     });
   };
