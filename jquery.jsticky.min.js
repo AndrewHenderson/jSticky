@@ -1,7 +1,7 @@
 /* jSticky Plugin
  * =============
  * Author: Andrew Henderson (@AndrewHenderson)
- * Author: Mike Street (@mikestreety)
+ * Contributor: Mike Street (@mikestreety)
  * Date: 9/7/2012
  * Update: 09/20/2016
  * Website: http://github.com/andrewhenderson/jsticky/
